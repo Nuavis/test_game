@@ -1,1 +1,1 @@
-exports.port = 80;
+exports.port = process.env.PORT;

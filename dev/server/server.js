@@ -11,4 +11,4 @@ http.createServer(function (req,res){
 		res.writeHead(200, {'Content-Type':  file.type});
 		res.end(file.data);
 	});
-}).listen(globals.port,"127.0.0.1");
+}).listen(globals.port,"0.0.0.0");
