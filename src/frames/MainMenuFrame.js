@@ -37,7 +37,9 @@ MainMenuFrame.prototype = {
 	},onMouseDown:function(){
 		for (var i = 0;i<this.buttons.length;i++){
 			var b = this.buttons[i];
-			if (Math.abs(b.position.y - mouse.y2)*2<b.size/draw.transform.preScale.y && Math.abs(b.position.x - mouse.x2)*4 <b.size * b.string.length / draw.transform.preScale.x){
+			if (this.frame == 0 && Math.abs(b.position.y - mouse.y2)*2<b.size/draw.transform.preScale.y && Math.abs(b.position.x - mouse.x2)*4 <b.size * b.string.length / draw.transform.preScale.x){
+				this.onButtonHit(b);
+			}else if (this.frame == 2 &&  Math.abs(b.position.y - mouse.y2)*2<b.size/draw.transform.preScale.y && Math.abs(b.position.x + b.size * b.string.length / draw.transform.preScale.x /2  - mouse.x2)*4 <b.size * b.string.length / draw.transform.preScale.x * 2){
 				this.onButtonHit(b);
 			}
 		}
@@ -55,6 +57,9 @@ MainMenuFrame.prototype = {
 					txt.destination = new V2(5,50 + i*5);
 				}
 				this.frame = 2;
+			break;
+			case "Mona Lisa":
+				
 			break;
 		}
 	}
