@@ -1,0 +1,3 @@
+function render(){
+	frame.render();
+}
