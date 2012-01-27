@@ -1,5 +1,5 @@
 var MainMenuFrame = function(){
-	this.frame = 0;
+    this.frame = 0;
 };
 MainMenuFrame.prototype = {
 	init:function(){
@@ -60,9 +60,10 @@ MainMenuFrame.prototype = {
 			break;
 			case "Mona Lisa":
 				lg("Mona Lisa Selected");
-                initGame("img0");
+                var game = new GameFrame("img0");
                 this.end(function(){
-                        
+                        game.init();
+                        frame = game;
                 });
 			break;
 		}
