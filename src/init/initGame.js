@@ -1,3 +1,3 @@
-function initGame(){
-	frame = new GameFrame();
+function initGame(str){
+	frame = new GameFrame(str);
 }

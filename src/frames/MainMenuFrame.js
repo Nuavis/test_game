@@ -33,7 +33,7 @@ MainMenuFrame.prototype = {
 			b.size -= (b.size - 24)/4;
 		}
 	},end:function(callback){
-	
+	    callback();
 	},onMouseDown:function(){
 		for (var i = 0;i<this.buttons.length;i++){
 			var b = this.buttons[i];
@@ -59,7 +59,11 @@ MainMenuFrame.prototype = {
 				this.frame = 2;
 			break;
 			case "Mona Lisa":
-				
+				lg("Mona Lisa Selected");
+                initGame("img0");
+                this.end(function(){
+                        
+                });
 			break;
 		}
 	}
