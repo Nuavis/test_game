@@ -13,8 +13,16 @@ var draw = {
 		con.globalAlpha /= this.alphas.pop();
 	},
 	img:function(id,x,y){
+        x=x||0;
+        y=y||0;
 		con.drawImage(asset[id],x,y);
 	},
+    img2:function(img,x,y,sx,sy){
+        x=x||0;
+        y=y||0;
+        lg(img,(x + this.transform.preTranslate.x)*this.transform.preScale.x + this.transform.postTranslate.x,(y + this.transform.preTranslate.y)*this.transform.preScale.y + this.transform.postTranslate.y,sx * this.transform.preScale.x,sy * this.transform.preScale.y);
+        con.drawImage(img,(x + this.transform.preTranslate.x)*this.transform.preScale.x + this.transform.postTranslate.x,(y + this.transform.preTranslate.y)*this.transform.preScale.y + this.transform.postTranslate.y,sx * this.transform.preScale.x,sy * this.transform.preScale.y);
+    },
 	imgSize:function(id,x,y,width,height){
 		con.drawImage(asset[id],x,y,width,height);
 	},

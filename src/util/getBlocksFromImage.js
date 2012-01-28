@@ -1,5 +1,6 @@
 function getBlocksFromImage(img,pw,ph,sx,sy,callback){
-    var ilist = [];
+    lg("Generating Tiles from Image");
+    var iar = [];
     var ca = document.createElement("canvas");
     ca.width = pw;
     ca.height = ph;
@@ -13,20 +14,22 @@ function getBlocksFromImage(img,pw,ph,sx,sy,callback){
     var finLoad = function(){
         amtLoaded --;
         if (amtLoaded <= 0){
-            callback(ilist);   
+            lg("Generation Finished");
+            callback();   
         }
     };
-    for (var x = 0;x<sx;x++){
-        for (var y = 0;y<sy;y++){
-            var d = c.getImageData(x*(pw/sx),y*(ph/sy),pw/sx,ph/sy);
+    for (var x = 0;x<sy;x++){
+        for (var y = 0;y<sx;y++){
+            amtLoaded++;
+            var d = c.getImageData(y*(pw/sx),x*(ph/sy),pw/sx,ph/sy);
             c2.putImageData(d,0,0);
             var mi = new Image();
             mi.onload = finLoad;
             mi.src = ca2.toDataURL();
-            ilist[x + y * sx] = mi; 
+            iar.push( mi ); 
         }
     }
     finLoad();
-    return this.ilist;
+    return iar;
     
 }

@@ -62,6 +62,7 @@ MainMenuFrame.prototype = {
 				lg("Mona Lisa Selected");
                 var game = new GameFrame("img0");
                 this.end(function(){
+                        draw.transform = new Transform();
                         game.init();
                         frame = game;
                 });
