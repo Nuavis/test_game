@@ -27,16 +27,12 @@ GameFrame.prototype = {
     render:function(){
         var t = this.ticks;
         draw.transform.push(new Transform(false,false,new V2(this.gsz.x / this.bsz.x,this.gsz.y / this.bsz.y)));
-	    if (t<frameRate * 4){
-            for (var i in this.squares){
-                draw.img2(this.squares[i].img,this.squares[i].position.x,this.squares[i].position.y,1,1);
-            }   
-	    }
+	    this.renderFunc();
         draw.transform.pop();
 	},update:function(){
         var t = this.ticks = this.ticks + 1;
         if (t<frameRate * 4){
-              
+              this.renderFunc = gameIntroAnimation;
         }
         
 	},end:function(callback){
