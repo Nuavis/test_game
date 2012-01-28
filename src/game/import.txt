@@ -1,3 +1,4 @@
 Square.js
 Block.js
-gameIntroFunc.js
+gameIntroAnimation.js
+gameIntroAnimation2.js

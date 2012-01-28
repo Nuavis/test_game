@@ -20,7 +20,6 @@ var draw = {
     img2:function(img,x,y,sx,sy){
         x=x||0;
         y=y||0;
-        lg(img,(x + this.transform.preTranslate.x)*this.transform.preScale.x + this.transform.postTranslate.x,(y + this.transform.preTranslate.y)*this.transform.preScale.y + this.transform.postTranslate.y,sx * this.transform.preScale.x,sy * this.transform.preScale.y);
         con.drawImage(img,(x + this.transform.preTranslate.x)*this.transform.preScale.x + this.transform.postTranslate.x,(y + this.transform.preTranslate.y)*this.transform.preScale.y + this.transform.postTranslate.y,sx * this.transform.preScale.x,sy * this.transform.preScale.y);
     },
 	imgSize:function(id,x,y,width,height){
@@ -28,5 +27,9 @@ var draw = {
 	},
 	text:function(string,position){
 		con.fillText(string,(position.x+draw.transform.preTranslate.x)*draw.transform.preScale.x,(position.y + draw.transform.preTranslate.y)*draw.transform.preScale.y);
-	}
+	},
+    clear:function(){
+        con.fillStyle = "#000";
+        con.fillRect(0,0,can.width,can.height);
+    }
 };
