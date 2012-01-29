@@ -7,7 +7,7 @@ var LoadFrame = function(){
 };
 LoadFrame.prototype = {
 	init:function(){
-	
+	    
 	},
 	render:function(){
 		draw.pushAlpha(.5);
@@ -15,10 +15,10 @@ LoadFrame.prototype = {
 		con.fillRect(0,0,can.width,can.height);
 		draw.popAlpha();
 		con.fillStyle = "#fff";
-		con.fillRect(can.width/2 + this.radius * Math.sin(this.ticks/8) * Math.cos(this.ticks/18) * Math.sin(this.ticks/14) - 12.5,can.height/2 + this.radius * Math.cos(this.ticks/8) * Math.sin(this.ticks/18) * Math.cos(this.ticks/14) - 12.5,25,25);
+		con.fillRect(can.width/2 + this.radius * Math.sin(this.ticks/8) - 12.5,can.height/2 + this.radius * Math.cos(this.ticks/8)  - 12.5,25,25);
 		con.font = "24px sans-serif";
 		con.textAlign = "center";
-		con.fillText("Loading, please give us money",can.width/2,can.height/2 + this.radius);
+		con.fillText("Loading, please give us money",can.width/2,can.height/2 + this.radius*2);
 	},
 	update:function(){
 		this.ticks ++;
