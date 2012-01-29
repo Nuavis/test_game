@@ -1,7 +1,7 @@
 var LoadFrame = function(){
 	this.ticks = 0;
 	this.oticks = 0;
-	this.radius = 100;
+	this.radius = 50;
 	con.fillStyle = "#000";
 	con.fillRect(0,0,can.width,can.height);
 };
